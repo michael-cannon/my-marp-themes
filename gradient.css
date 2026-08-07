@@ -49,18 +49,18 @@
    ========================================================= */
 
 section {
-  background-color: var(--imc-paper);
+  background-color: #F7F5EF;
 
   background-image:
     linear-gradient(
-      to top right,
-      var(--imc-paper) 5%,
-      #DDE6F5 95%
+      135deg,
+      #FFFFFF 0%,
+      #F7F5EF 45%,
+      #DCE7F7 100%
     );
 
   color: var(--imc-ink);
 }
-
 
 /* =========================================================
    TITLES
