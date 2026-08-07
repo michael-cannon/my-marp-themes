@@ -139,7 +139,11 @@ strong {
 
 a {
   color: var(--imc-navy);
+
+  text-decoration-line: underline;
   text-decoration-color: var(--imc-blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
 }
 
 
@@ -266,7 +270,11 @@ section.section li::marker {
 
 section.section a {
   color: var(--imc-white);
+
+  text-decoration-line: underline;
   text-decoration-color: var(--imc-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
 }
 
 
