@@ -258,3 +258,75 @@ img[alt~="center"] {
   display: block;
   margin: 0 auto;
 }
+
+/* =========================================================
+   SECTION / TRANSITION SLIDE
+   ========================================================= */
+
+section.section {
+  background:
+    linear-gradient(
+      135deg,
+      #122B4F 0%,
+      #173B6C 65%,
+      #315E91 100%
+    );
+
+  color: var(--imc-white);
+}
+
+section.section h1,
+section.section h2,
+section.section h3 {
+  color: var(--imc-white);
+}
+
+section.section strong {
+  color: var(--imc-gold);
+}
+
+section.section a {
+  color: var(--imc-white);
+  text-decoration-color: var(--imc-gold);
+}
+
+section.section::after,
+section.section header,
+section.section footer {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+section.section li::marker {
+  color: var(--imc-gold);
+}
+
+/* =========================================================
+   FOCUS / SPEAKING SLIDE
+   ========================================================= */
+
+section.focus {
+  background:
+    linear-gradient(
+      135deg,
+      #FFFFFF 0%,
+      #F7F5EF 65%,
+      #FBE8D8 120%
+    );
+
+  color: var(--imc-ink);
+}
+
+section.focus h1,
+section.focus h2,
+section.focus h3 {
+  color: var(--imc-navy);
+}
+
+section.focus strong {
+  color: var(--imc-navy);
+}
+
+section.focus blockquote {
+  border-left: 6px solid var(--imc-gold);
+  background: rgba(255, 255, 255, 0.65);
+}
