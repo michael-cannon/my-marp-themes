@@ -49,17 +49,22 @@
    ========================================================= */
 
 section {
-  background-color: #F7F5EF;
-
   background-image:
+    radial-gradient(
+      circle at 0% 10%,
+      rgba(127,160,221,0.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(242,169,0,0.10),
+      transparent 28%
+    ),
     linear-gradient(
       135deg,
-      #FFFFFF 0%,
-      #F7F5EF 45%,
-      #DCE7F7 100%
+      #FFFFFF,
+      #F7F5EF
     );
-
-  color: var(--imc-ink);
 }
 
 /* =========================================================
