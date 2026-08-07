@@ -221,6 +221,16 @@ section.blue {
 }
 
 
+section.blue a {
+  color: var(--imc-navy);
+
+  text-decoration-line: underline;
+  text-decoration-color: var(--imc-blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
+}
+
+
 section.blue h1,
 section.blue h2,
 section.blue h3 {
