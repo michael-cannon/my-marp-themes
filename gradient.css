@@ -1,33 +1,23 @@
 /* @theme imc-gradient */
-/* author: ImMichaelCannon https://github.com/michael-cannon// */
-/* license: MIT github.com/rnd195/my-marp-themes/blob/live/licenses/LICENSE */
 
 /*
  * IMC English Gradient Theme
  *
- * Based on the Gradient Marp theme by rnd195
- * Original license: MIT
+ * Based on Gradient theme structure
  *
- * IMC English branding:
- * Deep Navy:          #122B4F
- * Clean White:        #FFFFFF
- * IMC Gold:           #F2A900
- * Soft Learning Blue: #7FA0DD
- * Warm Paper:         #F7F5EF
- * Warm Peach:         #F4B37A
- * Ink Black:          #171717
- * Slate Gray:         #666666
- * Light Gray:         #D0D0D0
+ * Brand:
+ * Deep Navy: #122B4F
+ * White: #FFFFFF
+ * Gold: #F2A900
+ * Soft Blue: #7FA0DD
+ * Warm Paper: #F7F5EF
+ * Peach: #F4B37A
  */
 
 @import "default";
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vollkorn:wght@600;700&display=swap");
 
-
-/* =========================================================
-   IMC ENGLISH VARIABLES
-   ========================================================= */
 
 :root {
   --imc-navy: #122B4F;
@@ -40,15 +30,23 @@
   --imc-gray: #666666;
   --imc-light-gray: #D0D0D0;
 
-  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-family:
+    Inter,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 
 /* =========================================================
-   BACKGROUND
+   DEFAULT SLIDE
    ========================================================= */
 
 section {
+  padding: 52px 68px;
+
+  background-color: var(--imc-paper);
+
   background-image:
     radial-gradient(
       circle at 0% 10%,
@@ -62,13 +60,16 @@ section {
     ),
     linear-gradient(
       135deg,
-      #FFFFFF,
-      #F7F5EF
+      #FFFFFF 0%,
+      #F7F5EF 100%
     );
+
+  color: var(--imc-ink);
 }
 
+
 /* =========================================================
-   TITLES
+   TYPOGRAPHY
    ========================================================= */
 
 h1,
@@ -77,13 +78,69 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Vollkorn, Georgia, serif;
+  font-family:
+    Vollkorn,
+    Georgia,
+    serif;
+
+  color: var(--imc-navy);
+}
+
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.35em;
+
+  line-height: 1.05;
+}
+
+
+h2 {
+  margin-top: 0.15em;
+  margin-bottom: 0.35em;
+
+  line-height: 1.1;
+}
+
+
+h3 {
+  margin-top: 0.15em;
+  margin-bottom: 0.25em;
+
+  line-height: 1.15;
+}
+
+
+p {
+  margin-top: 0.35em;
+  margin-bottom: 0.5em;
+}
+
+
+ul,
+ol {
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+
+li {
+  margin-bottom: 0.15em;
+}
+
+
+li::marker {
+  color: var(--imc-gold);
+}
+
+
+strong {
   color: var(--imc-navy);
 }
 
 
 /* =========================================================
-   TEXT
+   LINKS / CODE / MARK
    ========================================================= */
 
 a {
@@ -91,17 +148,12 @@ a {
   text-decoration-color: var(--imc-blue);
 }
 
-strong {
-  color: var(--imc-navy);
-}
 
-code {
-  background-color: #FFFFFFAD;
-}
-
+code,
 pre {
-  background-color: #FFFFFFAD;
+  background-color: rgba(255,255,255,0.65);
 }
+
 
 mark {
   background-color: var(--imc-gold);
@@ -112,21 +164,15 @@ mark {
 
 
 /* =========================================================
-   LISTS
-   ========================================================= */
-
-li::marker {
-  color: var(--imc-gold);
-}
-
-
-/* =========================================================
-   BLOCKQUOTES
+   BLOCKQUOTE
    ========================================================= */
 
 blockquote {
   border-left-color: var(--imc-gold);
   color: var(--imc-navy);
+
+  background-color:
+    rgba(255,255,255,0.45);
 }
 
 
@@ -139,6 +185,7 @@ table th {
   color: var(--imc-white);
 }
 
+
 table td,
 table th {
   border-color: var(--imc-light-gray);
@@ -146,16 +193,7 @@ table th {
 
 
 /* =========================================================
-   HORIZONTAL RULE
-   ========================================================= */
-
-hr {
-  border-color: var(--imc-gold);
-}
-
-
-/* =========================================================
-   HEADER, FOOTER, PAGINATION
+   FOOTER / PAGINATION
    ========================================================= */
 
 header,
@@ -163,113 +201,50 @@ footer {
   color: var(--imc-gray);
 }
 
+
 section::after {
   color: var(--imc-gray);
   font-size: 0.75em;
-
-  /*
-   * From:
-   * github.com/yhatt/marp/issues/263
-   */
-  content:
-    attr(data-marpit-pagination)
-    " / "
-    attr(data-marpit-pagination-total);
 }
 
 
 /* =========================================================
-   BLUE VARIANT
+   BLUE: STRUCTURED LEARNING
    ========================================================= */
 
-/*
- * A stronger IMC English blue treatment.
- *
- * Usage:
- * <!-- _class: blue -->
- */
-
 section.blue {
-  background-color: #DDE6F5;
 
   background-image:
     linear-gradient(
-      to bottom right,
-      #EEF3FA 5%,
-      var(--imc-blue) 95%
+      135deg,
+      #EEF3FA 0%,
+      #DCE7F7 55%,
+      #B9CBE8 100%
     );
 
   color: var(--imc-ink);
 }
 
-section.blue > h1,
-section.blue > h2,
-section.blue > h3,
-section.blue > h4,
-section.blue > h5,
-section.blue > h6 {
+
+section.blue h1,
+section.blue h2,
+section.blue h3 {
   color: var(--imc-navy);
 }
 
-section.blue > a {
-  color: var(--imc-navy);
-}
 
-section.blue > strong {
-  color: var(--imc-navy);
-}
-
-section.blue::after,
-section.blue > footer,
-section.blue > header {
+section.blue strong {
   color: var(--imc-navy);
 }
 
 
 /* =========================================================
-   TINY TEXT
-   ========================================================= */
-
-/*
- * Makes paragraphs, lists, and blockquotes smaller.
- *
- * Usage:
- * <!-- _class: tinytext -->
- */
-
-section.tinytext > p,
-section.tinytext > ul,
-section.tinytext > ol,
-section.tinytext > blockquote {
-  font-size: 0.65em;
-}
-
-
-/* =========================================================
-   IMAGE KEYWORDS
-   ========================================================= */
-
-/*
- * Centers an image.
- *
- * Usage:
- * ![center](image.jpg)
- *
- * Based on:
- * github.com/marp-team/marpit/issues/141
- */
-
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-
-/* =========================================================
-   SECTION / TRANSITION SLIDE
+   SECTION: MAJOR TRANSITION
    ========================================================= */
 
 section.section {
-  background:
+
+  background-image:
     linear-gradient(
       135deg,
       #122B4F 0%,
@@ -280,46 +255,53 @@ section.section {
   color: var(--imc-white);
 }
 
+
 section.section h1,
 section.section h2,
 section.section h3 {
   color: var(--imc-white);
 }
 
+
 section.section strong {
   color: var(--imc-gold);
 }
 
-section.section a {
-  color: var(--imc-white);
-  text-decoration-color: var(--imc-gold);
-}
-
-section.section::after,
-section.section header,
-section.section footer {
-  color: rgba(255, 255, 255, 0.7);
-}
 
 section.section li::marker {
   color: var(--imc-gold);
 }
 
+
+section.section::after {
+  color:
+    rgba(255,255,255,0.7);
+}
+
+
 /* =========================================================
-   FOCUS / SPEAKING SLIDE
+   FOCUS: LEARNER PARTICIPATION
    ========================================================= */
 
 section.focus {
-  background:
+
+  background-image:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(127,160,221,0.30),
+      transparent 35%
+    ),
     linear-gradient(
       135deg,
       #FFFFFF 0%,
-      #F7F5EF 65%,
-      #FBE8D8 120%
+      #F7F5EF 55%,
+      #E7EEF9 100%
     );
 
-  color: var(--imc-ink);
+  border-left:
+    10px solid var(--imc-gold);
 }
+
 
 section.focus h1,
 section.focus h2,
@@ -327,11 +309,29 @@ section.focus h3 {
   color: var(--imc-navy);
 }
 
+
 section.focus strong {
-  color: var(--imc-navy);
+  color: var(--imc-gold);
 }
 
-section.focus blockquote {
-  border-left: 6px solid var(--imc-gold);
-  background: rgba(255, 255, 255, 0.65);
+
+/* =========================================================
+   TINY TEXT
+   ========================================================= */
+
+section.tinytext p,
+section.tinytext ul,
+section.tinytext ol,
+section.tinytext blockquote {
+  font-size: 0.65em;
+}
+
+
+/* =========================================================
+   CENTER IMAGES
+   ========================================================= */
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
 }
