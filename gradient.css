@@ -1,66 +1,200 @@
-/* @theme gradient */
-/* author: rnd195 github.com/rnd195/ */
+/* @theme imc-gradient */
+/* author: ImMichaelCannon https://github.com/michael-cannon// */
 /* license: MIT github.com/rnd195/my-marp-themes/blob/live/licenses/LICENSE */
 
+/*
+ * IMC English Gradient Theme
+ *
+ * Based on the Gradient Marp theme by rnd195
+ * Original license: MIT
+ *
+ * IMC English branding:
+ * Deep Navy:          #122B4F
+ * Clean White:        #FFFFFF
+ * IMC Gold:           #F2A900
+ * Soft Learning Blue: #7FA0DD
+ * Warm Paper:         #F7F5EF
+ * Warm Peach:         #F4B37A
+ * Ink Black:          #171717
+ * Slate Gray:         #666666
+ * Light Gray:         #D0D0D0
+ */
+
 @import "default";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vollkorn:wght@600;700&display=swap");
+
+
+/* =========================================================
+   IMC ENGLISH VARIABLES
+   ========================================================= */
 
 :root {
-  font-family: Inter, Helvetica, Arial;
+  --imc-navy: #122B4F;
+  --imc-white: #FFFFFF;
+  --imc-gold: #F2A900;
+  --imc-blue: #7FA0DD;
+  --imc-paper: #F7F5EF;
+  --imc-peach: #F4B37A;
+  --imc-ink: #171717;
+  --imc-gray: #666666;
+  --imc-light-gray: #D0D0D0;
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
 }
 
 
-/* --- BACKGROUND --- */
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
 section {
-  background-color: #ffffff;
-  background-image: linear-gradient(to top right, #e1c2e1 5%, #b9d5d9 95%);
+  background-color: var(--imc-paper);
+
+  background-image:
+    linear-gradient(
+      to top right,
+      var(--imc-paper) 5%,
+      #DDE6F5 95%
+    );
+
+  color: var(--imc-ink);
 }
 
 
-/* --- TITLES --- */
+/* =========================================================
+   TITLES
+   ========================================================= */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: #842174;
+  font-family: Vollkorn, Georgia, serif;
+  color: var(--imc-navy);
 }
 
 
-/* --- TEXT CHANGES --- */
+/* =========================================================
+   TEXT
+   ========================================================= */
+
 a {
-  color: #9d30a6;
+  color: var(--imc-navy);
+  text-decoration-color: var(--imc-blue);
+}
+
+strong {
+  color: var(--imc-navy);
 }
 
 code {
-  background-color: #ffffffad;
-}
-
-mark {
-  background-color: #eaa2ee;
-  padding: 0 2px 2px;
+  background-color: #FFFFFFAD;
 }
 
 pre {
-  background-color: #ffffffad;
+  background-color: #FFFFFFAD;
+}
+
+mark {
+  background-color: var(--imc-gold);
+  color: var(--imc-navy);
+
+  padding: 0 3px 2px;
 }
 
 
-/* --- BOTTOM BAR --- */
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+li::marker {
+  color: var(--imc-gold);
+}
+
+
+/* =========================================================
+   BLOCKQUOTES
+   ========================================================= */
+
+blockquote {
+  border-left-color: var(--imc-gold);
+  color: var(--imc-navy);
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table th {
+  background-color: var(--imc-navy);
+  color: var(--imc-white);
+}
+
+table td,
+table th {
+  border-color: var(--imc-light-gray);
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+hr {
+  border-color: var(--imc-gold);
+}
+
+
+/* =========================================================
+   HEADER, FOOTER, PAGINATION
+   ========================================================= */
+
+header,
+footer {
+  color: var(--imc-gray);
+}
+
 section::after {
+  color: var(--imc-gray);
   font-size: 0.75em;
-  /* From github.com/yhatt/marp/issues/263 */
-  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+
+  /*
+   * From:
+   * github.com/yhatt/marp/issues/263
+   */
+  content:
+    attr(data-marpit-pagination)
+    " / "
+    attr(data-marpit-pagination-total);
 }
 
 
-/* --- CUSTOM CLASSES AND KEYWORDS --- */
-/* <!-- _class: blue --> */
-/* Blue variant of the gradient theme */
+/* =========================================================
+   BLUE VARIANT
+   ========================================================= */
+
+/*
+ * A stronger IMC English blue treatment.
+ *
+ * Usage:
+ * <!-- _class: blue -->
+ */
+
 section.blue {
-  background-color: #ffffff;
-  background-image: linear-gradient(to bottom right, #cadaf7 5%, #87a7e4 95%);
+  background-color: #DDE6F5;
+
+  background-image:
+    linear-gradient(
+      to bottom right,
+      #EEF3FA 5%,
+      var(--imc-blue) 95%
+    );
+
+  color: var(--imc-ink);
 }
 
 section.blue > h1,
@@ -69,31 +203,57 @@ section.blue > h3,
 section.blue > h4,
 section.blue > h5,
 section.blue > h6 {
-  color: #214484;
+  color: var(--imc-navy);
 }
 
 section.blue > a {
-  color: #303ca6;
+  color: var(--imc-navy);
+}
+
+section.blue > strong {
+  color: var(--imc-navy);
 }
 
 section.blue::after,
 section.blue > footer,
 section.blue > header {
-  color: #303ca6;
+  color: var(--imc-navy);
 }
 
 
-/* <!-- _class: tinytext --> */
-/* Makes p, ul, and blockquote text smaller to fit more text on a slide */
+/* =========================================================
+   TINY TEXT
+   ========================================================= */
+
+/*
+ * Makes paragraphs, lists, and blockquotes smaller.
+ *
+ * Usage:
+ * <!-- _class: tinytext -->
+ */
+
 section.tinytext > p,
 section.tinytext > ul,
+section.tinytext > ol,
 section.tinytext > blockquote {
   font-size: 0.65em;
 }
 
 
-/* img keyword "center" */
-/* Centers an image, from github.com/marp-team/marpit/issues/141#issuecomment-473204518 */
+/* =========================================================
+   IMAGE KEYWORDS
+   ========================================================= */
+
+/*
+ * Centers an image.
+ *
+ * Usage:
+ * ![center](image.jpg)
+ *
+ * Based on:
+ * github.com/marp-team/marpit/issues/141
+ */
+
 img[alt~="center"] {
   display: block;
   margin: 0 auto;
