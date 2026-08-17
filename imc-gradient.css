@@ -3,9 +3,10 @@
 /*
  * IMC English Gradient Theme
  *
- * Based on Gradient theme structure
+ * Brand character:
+ * Professional, human, conversational, and occasionally playful.
  *
- * Brand:
+ * Core colors:
  * Deep Navy: #122B4F
  * White: #FFFFFF
  * Gold: #F2A900
@@ -38,6 +39,7 @@
 
 /* =========================================================
    DEFAULT SLIDE
+   Calm, spacious, neutral foundation
    ========================================================= */
 
 section {
@@ -53,8 +55,8 @@ section {
       rgba(242, 169, 0, 0.10),
       transparent 28%),
     linear-gradient(135deg,
-      #FFFFFF 0%,
-      #F7F5EF 100%);
+      var(--imc-white) 0%,
+      var(--imc-paper) 100%);
 
   color: var(--imc-ink);
 }
@@ -80,21 +82,18 @@ h6 {
 h1 {
   margin-top: 0;
   margin-bottom: 0.45em;
-
   line-height: 1.08;
 }
 
 h2 {
   margin-top: 0.15em;
   margin-bottom: 0.45em;
-
   line-height: 1.12;
 }
 
 h3 {
   margin-top: 0.2em;
   margin-bottom: 0.35em;
-
   line-height: 1.18;
 }
 
@@ -140,10 +139,10 @@ pre {
 }
 
 mark {
+  padding: 0 3px 2px;
+
   background-color: var(--imc-gold);
   color: var(--imc-navy);
-
-  padding: 0 3px 2px;
 }
 
 /* =========================================================
@@ -152,10 +151,9 @@ mark {
 
 blockquote {
   border-left-color: var(--imc-gold);
-  color: var(--imc-navy);
 
-  background-color:
-    rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.45);
+  color: var(--imc-navy);
 }
 
 /* =========================================================
@@ -187,7 +185,8 @@ section::after {
 }
 
 /* =========================================================
-   BLUE: STRUCTURED LEARNING
+   BLUE: LEARNING AND REFERENCE
+   What should I understand or remember?
    ========================================================= */
 
 section.blue {
@@ -200,27 +199,27 @@ section.blue {
   color: var(--imc-ink);
 }
 
+section.blue h1,
+section.blue h2,
+section.blue h3,
+section.blue h4,
+section.blue h5,
+section.blue h6,
+section.blue strong,
 section.blue a {
   color: var(--imc-navy);
+}
 
+section.blue a {
   text-decoration: underline;
   text-decoration-color: var(--imc-blue);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.12em;
 }
 
-section.blue h1,
-section.blue h2,
-section.blue h3 {
-  color: var(--imc-navy);
-}
-
-section.blue strong {
-  color: var(--imc-navy);
-}
-
 /* =========================================================
    SECTION: MAJOR TRANSITION
+   Where are we now?
    ========================================================= */
 
 section.section {
@@ -242,10 +241,7 @@ section.section h6 {
   color: var(--imc-white);
 }
 
-section.section strong {
-  color: var(--imc-gold);
-}
-
+section.section strong,
 section.section li::marker {
   color: var(--imc-gold);
 }
@@ -266,21 +262,21 @@ section.section::after {
 }
 
 /* =========================================================
-   FOCUS: LEARNER PARTICIPATION
+   FOCUS: LEARNER ACTION
+   What should I think, say, write, revise, or do?
    ========================================================= */
 
 section.focus {
+  border-left: 10px solid var(--imc-gold);
+
   background-image:
     radial-gradient(circle at 85% 15%,
       rgba(127, 160, 221, 0.30),
       transparent 35%),
     linear-gradient(135deg,
-      #FFFFFF 0%,
-      #F7F5EF 55%,
+      var(--imc-white) 0%,
+      var(--imc-paper) 55%,
       #E7EEF9 100%);
-
-  border-left:
-    10px solid var(--imc-gold);
 }
 
 section.focus h1,
@@ -293,13 +289,9 @@ section.focus h6 {
 }
 
 /*
- * Gold works well as an accent but can lose contrast when
- * projected against white or pale backgrounds.
- *
- * Focus slides therefore keep emphasized text navy and use
- * gold as an underline rather than as the text color.
+ * Gold remains an accent rather than body text because its
+ * contrast can weaken on pale projected backgrounds.
  */
-
 section.focus strong {
   color: var(--imc-navy);
 
@@ -314,13 +306,176 @@ section.focus li::marker {
 }
 
 /* =========================================================
-   TINY TEXT
+   CASUAL: REACTION OR CONVERSATIONAL HOOK
+   Sparse, memorable, human
+   ========================================================= */
+
+section.casual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 92px;
+  padding-right: 92px;
+
+  background-image:
+    radial-gradient(circle at 90% 12%,
+      rgba(244, 179, 122, 0.38),
+      transparent 28%),
+    radial-gradient(circle at 8% 88%,
+      rgba(127, 160, 221, 0.22),
+      transparent 30%),
+    linear-gradient(135deg,
+      var(--imc-white) 0%,
+      var(--imc-paper) 100%);
+}
+
+section.casual h1 {
+  margin-bottom: 0.25em;
+  font-size: 2.35em;
+  line-height: 0.98;
+}
+
+section.casual h2 {
+  font-family:
+    Inter,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+section.casual p,
+section.casual blockquote {
+  max-width: 85%;
+  font-size: 1.08em;
+}
+
+/* =========================================================
+   THOUGHT: INTERNAL REACTION VS USEFUL LANGUAGE
+   Best with "You're thinking" and "You say"
+   ========================================================= */
+
+section.thought {
+  background-image:
+    radial-gradient(circle at 88% 14%,
+      rgba(242, 169, 0, 0.18),
+      transparent 30%),
+    linear-gradient(135deg,
+      #FFFDF9 0%,
+      var(--imc-paper) 100%);
+}
+
+section.thought blockquote {
+  margin: 0.7em 0;
+  padding: 0.55em 0.8em;
+
+  border-left: 6px solid var(--imc-blue);
+
+  background-color: rgba(255, 255, 255, 0.70);
+}
+
+section.thought em {
+  color: var(--imc-gray);
+}
+
+section.thought strong {
+  color: var(--imc-navy);
+}
+
+/* =========================================================
+   DIALOGUE: PEOPLE TALKING
+   Use labels such as CUSTOMER, YOU, MANAGER, ENGINEERING
+   ========================================================= */
+
+section.dialogue {
+  background-image:
+    radial-gradient(circle at 5% 12%,
+      rgba(127, 160, 221, 0.22),
+      transparent 30%),
+    radial-gradient(circle at 95% 88%,
+      rgba(242, 169, 0, 0.13),
+      transparent 28%),
+    linear-gradient(135deg,
+      var(--imc-white) 0%,
+      var(--imc-paper) 100%);
+}
+
+section.dialogue strong {
+  display: inline-block;
+
+  margin-top: 0.25em;
+  margin-bottom: 0.15em;
+
+  font-family:
+    Inter,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--imc-navy);
+}
+
+section.dialogue blockquote {
+  margin: 0.15em 0 0.7em;
+  padding: 0.5em 0.75em;
+
+  border: 1px solid rgba(18, 43, 79, 0.14);
+  border-left: 6px solid var(--imc-gold);
+  border-radius: 12px;
+
+  background-color: rgba(255, 255, 255, 0.72);
+  color: var(--imc-ink);
+}
+
+/* =========================================================
+   CHOICE: CONTRASTING RESPONSES OR OPTIONS
+   Works especially well with tables or side-by-side content
+   ========================================================= */
+
+section.choice {
+  background-image:
+    linear-gradient(135deg,
+      #FFFFFF 0%,
+      #F7F5EF 50%,
+      #EEF3FA 100%);
+}
+
+section.choice table {
+  width: 100%;
+}
+
+section.choice table th {
+  background-color: var(--imc-navy);
+  color: var(--imc-white);
+}
+
+section.choice table td {
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.58);
+}
+
+section.choice blockquote {
+  border-left-width: 6px;
+  background-color: rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+   TINY TEXT: LAST RESORT
    ========================================================= */
 
 section.tinytext p,
 section.tinytext ul,
 section.tinytext ol,
-section.tinytext blockquote {
+section.tinytext blockquote,
+section.tinytext table {
   font-size: 0.65em;
 }
 
