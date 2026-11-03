@@ -77,6 +77,15 @@ section.section ol {
   border-radius: 6px;
 }
 
+section.section h1,
+section.section h2,
+section.section h3,
+section.section h4,
+section.section h5,
+section.section h6 {
+  color: var(--imc-gold);
+}
+
 /* =========================================================
    TYPOGRAPHY
    ========================================================= */
