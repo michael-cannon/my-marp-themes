@@ -61,6 +61,22 @@ section {
   color: var(--imc-ink);
 }
 
+section.section h1,
+section.section h2,
+section.section h3,
+section.section h4,
+section.section h5,
+section.section h6,
+section.section p,
+section.section ul,
+section.section ol {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.15em 0.35em;
+  background-color: rgba(18, 43, 79, 0.85);
+  border-radius: 6px;
+}
+
 /* =========================================================
    TYPOGRAPHY
    ========================================================= */
